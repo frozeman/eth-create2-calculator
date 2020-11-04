@@ -30,10 +30,4 @@ exports.calculateCreate2 = (from, salt, byteCode, constructorArgs) => {
     const saltHex = saltToHex(salt)
 
     return getCreate2Address(from, saltHex, keccak256(byteCode))
-        // .slice(-40)}`.toLowerCase()) return getAddress(`0x${keccak256(
-        //     `0x${['ff', from, saltHex, keccak256(byteCode)]
-        //         .map((x) => x.replace(/0x/, ''))
-        //         .join('')}`,
-        // )
-        // .slice(-40)}`.toLowerCase())
 }

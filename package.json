@@ -1,7 +1,7 @@
 {
   "name": "eth-create2-calculator",
   "description": "Library to calculate an ethereum create2 address in advance",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "src/index.js",
   "scripts": {
