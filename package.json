@@ -1,14 +1,28 @@
 {
   "name": "eth-create2-calculator",
+  "description": "Library to calculate an ethereum create2 address in advance",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "ethereum",
+    "create2"
+  ],
+  "authors": [
+    {
+      "name": "Fabian Vogelsteller",
+      "email": "fabian@lukso.network",
+      "homepage": "https://github.com/frozeman"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/ERC725Alliance/erc725.js/issues"
+  },
+  "homepage": "https://github.com/ERC725Alliance/erc725.js#readme",
+  "license": "Apache-2.0",
   "dependencies": {
     "ethers": "^5.0.19"
   },
