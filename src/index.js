@@ -1,4 +1,4 @@
-const {id, keccak256, defaultAbiCoder, getAddress, getCreate2Address} = require('ethers/lib/utils')
+const {id, keccak256, defaultAbiCoder, getCreate2Address} = require('ethers/lib/utils')
 
 const saltToHex = (salt) => {
     salt = salt.toLowerCase()
