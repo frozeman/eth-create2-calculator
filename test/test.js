@@ -9,13 +9,13 @@ const encodedParams = '0000000000000000000000005b38da6a701c568545dcfcb03fcb875f5
 
 describe('calculate create 2', function() {
     it('with salt being 32 bytes hex', function() {
-        assert(calculateCreate2(from, salt, bytecode + encodedParams), address)
+        assert.equal(calculateCreate2(from, salt, bytecode + encodedParams), address)
     })
     it('with salt being string "test"', function() {
-        assert(calculateCreate2(from, 'test', bytecode + encodedParams), address)
+        assert.equal(calculateCreate2(from, 'test', bytecode + encodedParams), address)
     })
     it('with params as object', function() {
-        assert(calculateCreate2(from, 'test', bytecode, {params: ['0x5b38da6a701c568545dcfcb03fcb875f56beddc4'], types: ['address']}), address)
+        assert.equal(calculateCreate2(from, 'test', bytecode, {params: ['0x5b38da6a701c568545dcfcb03fcb875f56beddc4'], types: ['address']}), address)
     });
 });
 
