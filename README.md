@@ -3,7 +3,7 @@
 This library calculates the create2 address of any given deploy code and from address.
 It works similar to [ethers.utils.getCreate2Address], but allows to pass in the full byte code and constructor arguments seperately.
 
-This library is a stripped down version from [miguelmota/solidity-create2-example](https://github.com/miguelmota/solidity-create2-example)
+This library is a stripped down version from [thegostep/solidity-create2-deployer](https://github.com/thegostep/solidity-create2-deployer)
 
 ## Usage
 
@@ -48,5 +48,6 @@ calculateCreate2(someFrom, '0x9c22ff5f21f0b81b113e63f7db6da94fedef11b2119b4088b8
 #### Example with salt as string
 
 ```js
+// the salt string will be keccak256 hashed before
 calculateCreate2(someFrom, 'test', someByteCode + encodedConstructorArgs)
 ```
