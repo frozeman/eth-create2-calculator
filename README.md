@@ -15,7 +15,7 @@ $ npm install eth-create2-calculator
 ### API
 
 ```js
-const {calculateCreate2} from `eth-create2-calculator`
+import {calculateCreate2} from 'eth-create2-calculator'
 
 calculateCreate2(from, salt, byteCode [, constructorArguments]) // constructorArguments is optional, byteCode can have already the constructor arguments attached
 ```
