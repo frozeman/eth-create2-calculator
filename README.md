@@ -15,9 +15,10 @@ $ npm install eth-create2-calculator
 ### API
 
 ```js
-import {calculateCreate2} from 'eth-create2-calculator'
+import { calculateCreate2 } from 'eth-create2-calculator'
 
 calculateCreate2(from, salt, byteCode [, constructorArguments]) // constructorArguments is optional, byteCode can have already the constructor arguments attached
+> '0x12345...' // calculated contract address
 ```
 
 ### Examples
@@ -37,12 +38,14 @@ calculateCreate2(someFrom, someSalt, someByteCode, {
     params: ['0x5b38da6a701c568545dcfcb03fcb875f56beddc4'],
     types: ['address']
 })
+> '0x12345...' // calculated contract address
 ```
 
 #### Example with salt as 32 bytes hex
 
 ```js
 calculateCreate2(someFrom, '0x9c22ff5f21f0b81b113e63f7db6da94fedef11b2119b4088b89664fb9a3cb658', someByteCode + encodedConstructorArgs)
+> '0x12345...' // calculated contract address
 ```
 
 #### Example with salt as string
@@ -50,4 +53,5 @@ calculateCreate2(someFrom, '0x9c22ff5f21f0b81b113e63f7db6da94fedef11b2119b4088b8
 ```js
 // the salt string will be keccak256 hashed before
 calculateCreate2(someFrom, 'test', someByteCode + encodedConstructorArgs)
+> '0x12345...' // calculated contract address
 ```
