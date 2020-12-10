@@ -1,5 +1,6 @@
 const assert = require('assert')
 const {calculateCreate2} = require('../src/index')
+const {keccak256} = require('ethers/lib/utils')
 
 const from = '0x28D25E70819140daF65b724158D00c373D1a18ee'
 const address = '0xd72A6BE6eC0Bd9675B2044Ac1bA0d89230A7F9C0'
@@ -17,5 +18,11 @@ describe('calculate create 2', function() {
     it('with params as object', function() {
         assert.equal(calculateCreate2(from, 'test', bytecode, {params: ['0x5b38da6a701c568545dcfcb03fcb875f56beddc4'], types: ['address']}), address)
     });
+    it('with bytecode being a hash', function() {
+        assert.equal(calculateCreate2(from, salt, keccak256(bytecode + encodedParams)), address)
+    })
+    it('and fail with bytecode being a hash and constructor arguments', function() {
+        assert.throws(function() { calculateCreate2(from, salt, keccak256(bytecode + encodedParams), {params: ['0x5b38da6a701c568545dcfcb03fcb875f56beddc4'], types: ['address']})}, Error)
+    })
 });
 
